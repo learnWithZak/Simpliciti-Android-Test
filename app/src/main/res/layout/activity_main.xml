@@ -7,12 +7,25 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/current_position_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        tools:text="Lat: 12,34334535 - Lng: 24,454334"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.386" />
+
+    <TextView
+        android:id="@+id/current_address_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/current_position_tv"
+        app:layout_constraintStart_toStartOf="@+id/current_position_tv"
+        app:layout_constraintTop_toBottomOf="@+id/current_position_tv"
+        tools:text="44 Rue de Mars, ville, 99000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
