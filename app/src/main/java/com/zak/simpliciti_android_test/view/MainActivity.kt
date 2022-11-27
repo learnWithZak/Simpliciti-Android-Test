@@ -5,7 +5,6 @@ import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -15,6 +14,7 @@ import com.zak.simpliciti_android_test.databinding.ActivityMainBinding
 import com.zak.simpliciti_android_test.presenter.MainPresenter
 import com.zak.simpliciti_android_test.repository.MainRepositoryImpl
 import com.zak.simpliciti_android_test.service.MainService
+import com.zak.simpliciti_android_test.R
 
 class MainActivity : AppCompatActivity(), MainContract.View {
 
@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
 
     companion object {
         private const val REQUEST_LOCATION = 1
-        private val TAG = MainActivity::class.java.simpleName
     }
 
     private lateinit var binding: ActivityMainBinding
@@ -41,9 +40,18 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     override fun onStart() {
         super.onStart()
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
+        initLocationRequest()
+        initLocationCallBack()
+        getCurrentLocation()
+    }
+
+    private fun initLocationRequest() {
         locationRequest = LocationRequest.Builder( 1000)
             .setPriority(Priority.PRIORITY_HIGH_ACCURACY)
             .build()
+    }
+
+    private fun initLocationCallBack() {
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
                 super.onLocationResult(locationResult)
@@ -52,7 +60,6 @@ class MainActivity : AppCompatActivity(), MainContract.View {
                 } ?: mainPresenter.onErrorGetLocationResult()
             }
         }
-        getCurrentLocation()
     }
 
     private fun getCurrentLocation() {
@@ -93,15 +100,17 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         super.onStop()
         fusedLocationProviderClient.removeLocationUpdates(locationCallback).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                Log.d(TAG, "Location Callback removed.")
+                mainPresenter.onRemoveLocationUpdatesSucceeded()
             } else {
-                Log.d(TAG, "Failed to remove Location Callback.")
+                mainPresenter.onRemoveLocationUpdatesFailed()
+
             }
         }
     }
 
     override fun showLatAndLng(lat: Double, lng: Double) {
-        binding.currentPositionTv.text = "Lat: $lat - lng: $lng"
+        val currentPosition = String.format(resources.getString(R.string.lat_lng_formatted_text), lat, lng)
+        binding.currentPositionTv.text = currentPosition
     }
 
     override fun showCurrentAddressText(address: String) {

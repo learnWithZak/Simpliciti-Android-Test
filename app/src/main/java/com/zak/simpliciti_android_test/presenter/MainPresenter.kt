@@ -1,5 +1,6 @@
 package com.zak.simpliciti_android_test.presenter
 
+import android.util.Log
 import com.zak.simpliciti_android_test.MainContract
 import com.zak.simpliciti_android_test.model.GeoKeoResponse
 import com.zak.simpliciti_android_test.repository.MainRepository
@@ -13,6 +14,10 @@ class MainPresenter(
     view: MainContract.View,
     private val mainRepository: MainRepository
 ) : MainContract.Presenter {
+
+    companion object {
+        private val TAG = MainPresenter::class.java.simpleName
+    }
 
     private val disposables = CompositeDisposable()
     private var view: MainContract.View? = view
@@ -58,6 +63,15 @@ class MainPresenter(
     override fun onErrorGetLocationResult() {
         view?.showErrorMessage("No location found")
     }
+
+    override fun onRemoveLocationUpdatesSucceeded() {
+        Log.d(TAG, "Location Callback removed.")
+    }
+
+    override fun onRemoveLocationUpdatesFailed() {
+        Log.d(TAG, "Failed to remove Location Callback.")
+    }
+
 
     override fun onPermissionDenied() {
         view?.showErrorMessage("Location permission denied")
