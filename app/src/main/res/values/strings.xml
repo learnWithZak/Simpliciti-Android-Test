@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">simpliciti-android-test</string>
+    <string name="lat_lng_formatted_text">"Lat: %1$s - Lng: %2$s</string>
+
 </resources>
