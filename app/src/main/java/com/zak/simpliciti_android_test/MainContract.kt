@@ -9,6 +9,8 @@ interface MainContract {
         fun onGetLocationResult(lat: Double, lng: Double)
         fun onPermissionDenied()
         fun onErrorGetLocationResult()
+        fun onRemoveLocationUpdatesSucceeded()
+        fun onRemoveLocationUpdatesFailed()
     }
 
     interface View {
