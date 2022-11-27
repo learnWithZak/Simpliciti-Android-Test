@@ -12,6 +12,11 @@ interface MainContract {
     }
 
     interface View {
-
+        fun showLatAndLng(lat:Double, lng: Double)
+        fun showCurrentAddressText(address: String)
+        fun showErrorMessage(message: String?)
+        fun showCurrentAddressProgressBar()
+        fun hideCurrentAddressProgressBar()
+        fun hideCurrentAddressText()
     }
 }
