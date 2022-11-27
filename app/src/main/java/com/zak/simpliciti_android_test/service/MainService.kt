@@ -4,6 +4,7 @@ import com.zak.simpliciti_android_test.model.GeoKeoResponse
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -22,6 +23,7 @@ interface MainService {
             val retrofit = Retrofit.Builder()
                 .baseUrl("https://geokeo.com/geocode/v1/")
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .build()
 
             retrofit.create(MainService::class.java)
