@@ -13,8 +13,10 @@ import com.zak.simpliciti_android_test.MainContract
 import com.zak.simpliciti_android_test.databinding.ActivityMainBinding
 import com.zak.simpliciti_android_test.presenter.MainPresenter
 import com.zak.simpliciti_android_test.repository.MainRepositoryImpl
-import com.zak.simpliciti_android_test.service.MainService
+import com.zak.simpliciti_android_test.service.GeoKeoApiService
 import com.zak.simpliciti_android_test.R
+import com.zak.simpliciti_android_test.repository.MainRepository
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity(), MainContract.View {
 
@@ -22,6 +24,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
     private lateinit var locationRequest: LocationRequest
     private lateinit var locationCallback: LocationCallback
     private lateinit var mainPresenter: MainContract.Presenter
+    private val repository: MainRepository by inject()
 
     companion object {
         private const val REQUEST_LOCATION = 1
@@ -34,7 +37,7 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        mainPresenter = MainPresenter(this, MainRepositoryImpl(MainService.instance))
+        mainPresenter = MainPresenter(this, repository)
     }
 
     override fun onStart() {
