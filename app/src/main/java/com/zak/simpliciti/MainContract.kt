@@ -1,6 +1,6 @@
-package com.zak.simpliciti_android_test
+package com.zak.simpliciti
 
-import com.zak.simpliciti_android_test.presenter.BasePresenter
+import com.zak.simpliciti.presenter.BasePresenter
 
 
 interface MainContract {

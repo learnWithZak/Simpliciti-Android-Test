@@ -1,4 +1,4 @@
-package com.zak.simpliciti_android_test.model
+package com.zak.simpliciti.model
 
 import com.google.gson.annotations.SerializedName
 

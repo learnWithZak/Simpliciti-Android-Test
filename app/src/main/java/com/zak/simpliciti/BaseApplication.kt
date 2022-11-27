@@ -1,9 +1,9 @@
-package com.zak.simpliciti_android_test
+package com.zak.simpliciti
 
 import android.app.Application
-import com.zak.simpliciti_android_test.di.apiModule
-import com.zak.simpliciti_android_test.di.repositoryModule
-import com.zak.simpliciti_android_test.di.retrofitModule
+import com.zak.simpliciti.di.apiModule
+import com.zak.simpliciti.di.repositoryModule
+import com.zak.simpliciti.di.retrofitModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.GlobalContext.startKoin

@@ -1,8 +1,8 @@
-package com.zak.simpliciti_android_test.di
+package com.zak.simpliciti.di
 
-import com.zak.simpliciti_android_test.repository.MainRepository
-import com.zak.simpliciti_android_test.repository.MainRepositoryImpl
-import com.zak.simpliciti_android_test.service.GeoKeoApiService
+import com.zak.simpliciti.repository.MainRepository
+import com.zak.simpliciti.repository.MainRepositoryImpl
+import com.zak.simpliciti.service.GeoKeoApiService
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory

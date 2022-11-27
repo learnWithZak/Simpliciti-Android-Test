@@ -1,4 +1,4 @@
-package com.zak.simpliciti_android_test.view
+package com.zak.simpliciti.view
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -9,14 +9,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.*
-import com.zak.simpliciti_android_test.MainContract
-import com.zak.simpliciti_android_test.databinding.ActivityMainBinding
-import com.zak.simpliciti_android_test.presenter.MainPresenter
-import com.zak.simpliciti_android_test.repository.MainRepositoryImpl
-import com.zak.simpliciti_android_test.service.GeoKeoApiService
-import com.zak.simpliciti_android_test.R
-import com.zak.simpliciti_android_test.repository.MainRepository
+import com.zak.simpliciti.MainContract
+import com.zak.simpliciti.presenter.MainPresenter
+import com.zak.simpliciti.repository.MainRepository
 import org.koin.android.ext.android.inject
+import com.zak.simpliciti.R
+import com.zak.simpliciti.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), MainContract.View {
 

@@ -1,4 +1,4 @@
-package com.zak.simpliciti_android_test
+package com.zak.simpliciti
 
 import org.junit.Test
 

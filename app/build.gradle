@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.zak.simpliciti_android_test'
+    namespace 'com.zak.simpliciti'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.zak.simpliciti_android_test"
+        applicationId "com.zak.simpliciti"
         minSdk 24
         targetSdk 33
         versionCode 1

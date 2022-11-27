@@ -1,6 +1,6 @@
-package com.zak.simpliciti_android_test.service
+package com.zak.simpliciti.service
 
-import com.zak.simpliciti_android_test.model.GeoKeoResponse
+import com.zak.simpliciti.model.GeoKeoResponse
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Response
 import retrofit2.http.GET

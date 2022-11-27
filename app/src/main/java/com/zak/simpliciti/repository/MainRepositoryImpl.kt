@@ -1,7 +1,7 @@
-package com.zak.simpliciti_android_test.repository
+package com.zak.simpliciti.repository
 
-import com.zak.simpliciti_android_test.model.GeoKeoResponse
-import com.zak.simpliciti_android_test.service.GeoKeoApiService
+import com.zak.simpliciti.model.GeoKeoResponse
+import com.zak.simpliciti.service.GeoKeoApiService
 import io.reactivex.rxjava3.core.Single
 
 

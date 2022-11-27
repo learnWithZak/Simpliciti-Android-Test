@@ -1,9 +1,9 @@
-package com.zak.simpliciti_android_test.presenter
+package com.zak.simpliciti.presenter
 
 import android.util.Log
-import com.zak.simpliciti_android_test.MainContract
-import com.zak.simpliciti_android_test.model.GeoKeoResponse
-import com.zak.simpliciti_android_test.repository.MainRepository
+import com.zak.simpliciti.MainContract
+import com.zak.simpliciti.model.GeoKeoResponse
+import com.zak.simpliciti.repository.MainRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
